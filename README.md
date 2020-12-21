@@ -1,8 +1,10 @@
 # LIAJSORT
 #
-# The fourth O(N) algorithm and the fastest algorithm for big inputs(>1000000)
+# The fourth O(N)(to my knowledge after counting sort,Radix sort and package sort)
+# algorithm and the fastest algorithm for big inputs(>1000000)
 #
-# It seems to look like an improved of the counting sort.
+# It seems to look like an improved of the counting sort(even if I want to clarify 
+# that the idea did not come to me from).
 #
 # The idea is to put in their "correct places" on the bits of an integer 
 # the numbers in entries.
