@@ -1,10 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+
 #define MAX  1000000000
 #define MIN -1000000000
+
 void LIAJSORT(int *t,int r)
 {
+    //p for the postivie numbers,n for the negative
     int *p = malloc(sizeof(*p)),*n = malloc(sizeof(*n));p[0]=0 ;n[0]=0;
     int u =0,l = 0,s = 0 , e = 0;
     _Bool pt;
@@ -40,11 +43,15 @@ void LIAJSORT(int *t,int r)
             
         }
         
-        /* for(int i = s;i >- 1 ;i--)
+        /*to print the array after sorting
+        i've commented it because of the big size of input (>300000)
+        
+        //to print the negative numbers
+        for(int i = s;i >- 1 ;i--)
             for(int j = 0 ;j < 32;j++)
                 if(n[i]&(1<<j))printf("%d ->",-i*32 - (32 - j));
                 
-            
+        // to print the positive numbers   
         for(int i = 0;i<l + 1;i++)
             for(int j = 0 ;j < 32;j++)
                 if(p[i]&(1<<j))printf("%d ->",i*32 + j);
@@ -55,14 +62,17 @@ void LIAJSORT(int *t,int r)
         /* void **tab[4];
         tab[0] = p;
         tab[1]=n;
+        I was thinking to a way to return the array p,n and their size(respectivily l and s)
+        but ....bored
          */
     }
 
-int* gener()
+//to generate n randoms numbers
+int* gener(int n)
 {   
     srand(time(NULL));
-    int *r = malloc(300000*sizeof(int));
-    for(int i = 0;i < 300000;i++)
+    int *r = malloc(n*sizeof(int));
+    for(int i = 0;i < n;i++)
             r[i] = (rand() % (MAX - MIN + 1)) + MIN;
 
     return r;
@@ -70,12 +80,10 @@ int* gener()
 
 int main()
 {
-    int n = 300000,*t=gener() ;
-    //int r [] = {3,2} ,n =2;
-        clock_t t1 = clock();
-
+    int n = 300000,*t=gener(n) ;
+    clock_t t1 = clock();
     LIAJSORT(t,n);
-        printf("time = %f\n",(float)(clock()-t1)/CLOCKS_PER_SEC);
+    printf("time = %f\n",(float)(clock()-t1)/CLOCKS_PER_SEC);
 
     
     
