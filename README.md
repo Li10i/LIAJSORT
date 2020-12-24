@@ -25,7 +25,7 @@
 # For comparison the QUICKSORT is faster than the LIAJSORT for entries < 300k. 
 # But from entries > 300k the LIAJSORT become faster and faster 
 # (for entries = 300k , 0.3s for QS agaisnt 0.299s for LS
-# but for entries = 10^10, 14s for Qs agaisnt 2s for LS)
+# but for entries = 10^7, 14s for Qs agaisnt 2s for LS)
 #
 # Appart from his good times complexity the LIAJSORT gives the advantages of
 # the space complexity.
